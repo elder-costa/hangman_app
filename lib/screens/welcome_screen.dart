@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hangman_app/components/rounded_button.dart';
+import 'package:hangman_app/screens/game_screen.dart';
+import 'package:hangman_app/screens/high_score_screen.dart';
 
 class WelcomeScreen extends StatefulWidget {
   static const String id = 'welcome_screen';
@@ -20,13 +22,27 @@ class WelcomeScreenState extends State<WelcomeScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            Text('HANGMAN', style: GoogleFonts.patrickHandSc(color: Colors.white, fontSize: 40),),
+            Text(
+              'HANGMAN',
+              style:
+                  GoogleFonts.patrickHandSc(color: Colors.white, fontSize: 40),
+            ),
             Image.asset('images/gallow.png'),
-            const RoundedButton(title: 'Play'),
-            const RoundedButton(title: 'High Score'),
+            RoundedButton(
+              title: 'Play',
+              onPressed: () => _navigateToNextScreen(GameScreen.id),
+            ),
+            RoundedButton(
+              title: 'High Score',
+              onPressed: () => _navigateToNextScreen(HighScoreScreen.id),
+            ),
           ],
         ),
       ),
     );
+  }
+
+  void _navigateToNextScreen(String id) {
+    Navigator.of(context).pushNamed(id);
   }
 }

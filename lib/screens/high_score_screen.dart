@@ -12,6 +12,10 @@ class HighScoreScreen extends StatefulWidget {
 class _HighScoreScreenState extends State<HighScoreScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const Scaffold(
+      body: Center(
+        child: Text('High Score'),
+      ),
+    );
   }
 }
