@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hangman_app/screens/welcome_screen.dart';
+import 'screens/game_screen.dart';
+import 'screens/high_score_screen.dart';
 
 void main() => runApp(const HangmanApp());
 
@@ -12,6 +14,8 @@ class HangmanApp extends StatelessWidget {
       initialRoute: WelcomeScreen.id,
       routes: {
         WelcomeScreen.id: (context) => const WelcomeScreen(),
+        GameScreen.id: (context) => const GameScreen(),
+        HighScoreScreen.id: (context) => const HighScoreScreen(),
       },
     );
   }
